@@ -1,0 +1,39 @@
+# We mark this as its own workflow, as this allows a more complete run
+# of the linting tools.
+
+name: Full Linting
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+  # schedule:
+  #   - cron: '25 3 * * 0' # Run at 03:25 every Sunday
+jobs:
+  languagetool:
+    name: linter / LanguageTool
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LanguageTool with reviewdog
+        uses: reviewdog/action-languagetool@v1.12.0
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
+          language: en-US
+          level: Info
+  misspell:
+    name: linter / misspell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run misspell with reviewdog
+        uses: reviewdog/action-misspell@v1.14.0
+        with:
+          github_token: ${{ secrets.github_token }}
+          locale: "US"
+          filter_mode: nofilter
+          reporter: github-check
+          level: Info
+          path: |
+            input
+            src

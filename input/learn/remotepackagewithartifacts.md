@@ -10,7 +10,7 @@ Sometimes a package may contain more than just a nuspec file and an install scri
 
 Boxstarter can create a template package targeting an existing directory and install the package on any machine open to WINRM or WMI remoting.
 
-This walk through will create a NuGet ODATA feed application and deploy it to a remote server after enabling web services on the server.
+This walk trough will create a NuGet ODATA feed application and deploy it to a remote server after enabling web services on the server. 
 
 ## Step 1
 
