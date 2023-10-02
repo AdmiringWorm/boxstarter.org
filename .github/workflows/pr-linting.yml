@@ -1,0 +1,30 @@
+name: PR Linting
+on: [pull_request]
+jobs:
+  languagetool:
+    name: linter / LanguageTool
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LanguageTool with reviewdog
+        uses: reviewdog/action-languagetool@v1.12.0
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review
+          language: en-US
+          level: Warning
+  misspell:
+    name: linter / misspell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run misspell with reviewdog
+        uses: reviewdog/action-misspell@v1.14.0
+        with:
+          github_token: ${{ secrets.github_token }}
+          locale: "US"
+          reporter: github-pr-review
+          level: Warning
+          path: |
+            input
+            src
