@@ -72,6 +72,7 @@ You can change the location by using the Set-BoxstarterConfig command:
 Set-BoxstarterConfig -LocalRepo "c:\some\other\location"
 ```
 
+
 ## Editing and adding resources to your package
 
 Optionally, you can call the New-BoxstarterPackage command with a path argument and supply a directory that contains files you want to be included in the package:
