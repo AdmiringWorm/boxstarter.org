@@ -8,7 +8,7 @@
 			{
 				string breadcrumbTitle = parent.GetTitle();
 				if (breadcrumbTitle == root.GetTitle()) {
-					breadcrumbTitle = "Boxstarter";
+					breadcrumbTitle = "Boxstarter ";
 				}
 
 				<li class="breadcrumb-item @(Document.IdEquals(root) ? "d-none" : null)">@Html.DocumentLink(parent, parent.GetString(Constants.BreadcrumbTitle, breadcrumbTitle))</li>
