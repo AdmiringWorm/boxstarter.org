@@ -1,8 +1,5 @@
 name: Linting
 on:
-  push:
-    branches:
-      - master
   pull_request:
 
 permissions:
@@ -20,6 +17,8 @@ jobs:
           cond: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' }}
           if_true: "github-pr-review"
           if_false: "github-check"
+      - name: Setup ReviewDog
+        uses: reviewdog/action-setup@v1.0.4
       - name: Run misspell with reviewdog
         uses: reviewdog/action-misspell@v1.14.0
         with:
@@ -41,6 +40,8 @@ jobs:
           cond: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' }}
           if_true: "github-pr-review"
           if_false: "github-check"
+      - name: Setup ReviewDog
+        uses: reviewdog/action-setup@v1.0.4
       - name: Run LanguageTool with reviewdog
         uses: reviewdog/action-languagetool@v1.12.0
         with:
