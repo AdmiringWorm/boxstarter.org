@@ -3,7 +3,11 @@ on:
   push:
     branches:
       - master
-  pull_request_target:
+  pull_request:
+
+permissions:
+  pull-requests: write
+  issues: write
 
 jobs:
   misspell:
@@ -19,13 +23,14 @@ jobs:
       - name: Run misspell with reviewdog
         uses: reviewdog/action-misspell@v1.14.0
         with:
-          github_token: ${{ secrets.REVIEW_TOKEN }}
+          github_token: ${{ secrets.github_token }}
           reporter: ${{ steps.reporter.outputs.value }}
           level: warning
           locale: "US"
           path: |
             input
             src
+          fail_or_error: true
   languagetool:
     runs-on: ubuntu-latest
     steps:
@@ -39,7 +44,8 @@ jobs:
       - name: Run LanguageTool with reviewdog
         uses: reviewdog/action-languagetool@v1.12.0
         with:
-          github_token: ${{ secrets.REVIEW_TOKEN }}
+          github_token: ${{ secrets.github_token }}
           reporter: ${{ steps.reporter.outputs.value }}
           level: warning # Only valid if running on a commit, ie through push to master branch
           language: en-US
+          fail_or_error: true
