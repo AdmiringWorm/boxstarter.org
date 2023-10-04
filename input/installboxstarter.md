@@ -5,11 +5,11 @@ Title: Installing Boxstarter
 
 # Installing Boxstarter
 
-Boxstarter can be installed using [Chocolatey](https://chocolatey.org) or by downloading the Boxstarter zip file and running Setup.Bat
+Boxstarter can be instaled using [Chocolatey](https://chocolatey.org) or by downloading the Boxstarter zip file and running Setup.Bat
 
 > :choco-info: **NOTE**
 >
-> If you simply want to install a "one-off" script locally on a machine, you may find it easiest to [launch Boxstarter from the web](weblauncher).
+> If you simply want to instal a "one-off" script locally on a machine, you may find it easiest to [launch Boxstarter from the web](weblauncher).
 
  Prerequisites
 
