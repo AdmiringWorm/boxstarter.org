@@ -5,7 +5,7 @@ Title: Testing Packages
 
 # Testing Packages
 
-Boxstarter can detect which packages have changed and test their installations on one or more deployment targets. Boxstarter can automate publishing successful packages to their feed.
+Boxstarter can detect which pacages have changed and test their installations on one or more deployment targets. Boxstarter can automate publishing successful packages to their feed.
 
 The Boxstarter TestRunner module can test [Chocolatey](https://chocolatey.org) package installs on one or more deployment targets and evaluate whether the installation was successful. The TestRunner module can also be used to automate the publishing of Chocolatey packages to a [NuGet](https://nuget.org) feed. That may be the public Chocolatey community feed or a private feed.
 
