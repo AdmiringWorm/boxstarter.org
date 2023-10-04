@@ -31,7 +31,7 @@ This will download and install the Boxstarter modules to your PSModulePath.
 
 ## Downloading the zip file
 
-The zip file contains a Setup.Bat file that will go to Chocolatey and install Boxstarter. If Chocolatey is not installed on your machine, the Boxstarter installer will request the user's permission to install it. Note: Setup.bat accepts a `-Force` argument to suppress this prompt.
+The zip file contains a Setup.Bat file that will go to Chocolatey and install Boxstarter. If Chocolatey is not installed on your machine, the Boxstarter installer will request the user's permission to instal it. Note: Setup.bat accepts a `-Force` argument to suppress this prompt.
 
 ![Boxstarter Module installer](/assets/images/setup.png)
 
