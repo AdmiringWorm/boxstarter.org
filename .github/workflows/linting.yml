@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-  pull_request:
+  pull_request_target:
 
 jobs:
   misspell:
@@ -13,7 +13,7 @@ jobs:
       - uses: haya14busa/action-cond@v1
         id: reporter
         with:
-          cond: ${{ github.event_name == 'pull_request' }}
+          cond: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' }}
           if_true: "github-pr-review"
           if_false: "github-check"
       - name: Run misspell with reviewdog
@@ -33,7 +33,7 @@ jobs:
       - uses: haya14busa/action-cond@v1
         id: reporter
         with:
-          cond: ${{ github.event_name == 'pull_request' }}
+          cond: ${{ github.event_name == 'pull_request' || github.event_name == 'pull_request_target' }}
           if_true: "github-pr-review"
           if_false: "github-check"
       - name: Run LanguageTool with reviewdog
