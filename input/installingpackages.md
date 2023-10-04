@@ -3,13 +3,13 @@ Order: 80
 Title: Installing Packages
 ---
 
-# Installing Packages
+# Instaling Packages
 
-Boxstarter can install packages either from a local Boxstarter Repository, a network share or external media, or it can "push" an installation to a remote machine.
+Boxstarter can instal packages either from a local Boxstarter Repository, a network share or external media, or it can "push" an installation to a remote machine.
 
 ## Install-BoxstarterPackage
 
-To kick off a Boxstarter installation session, use the `Install-BoxstarterPackage` command.
+To kick off a Boxstarter instalation session, use the `Install-BoxstarterPackage` command.
 
 ```powershell
 $cred=Get-Credential domain\username
