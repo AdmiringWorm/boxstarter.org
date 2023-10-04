@@ -16,7 +16,7 @@ $cred=Get-Credential domain\username
 Install-BoxstarterPackage -PackageName "MyPackage1","MyPackage2" -Credential $cred
 ```
 
-This will install the MyPackage1 and MyPackage2 packages locally and use the credentials given for any auto login needed after a reboot.
+This will instal the MyPackage1 and MyPackage2 packages locally and use the credentials given for any auto login needed after a reboot.
 
 There may be times when you either know that no reboot will be needed or you want to ensure that none take place. To tell Boxstarter not to perform any reboots, even if a pending reboot is detected, use the `-DisableReboots` argument.
 
@@ -26,7 +26,7 @@ Install-BoxstarterPackage -PackageName "MyPackage1","MyPackage2" -DisableReboots
 
 Since no reboot will be performed, the credential is unnecessary.
 
-## Reinstall Logic
+## Reinstal Logic
 
 If you are familiar with Chocolatey, you know that Chocolatey will check if a package has been previously installed and will skip the installation if there is already a install for that same package. Boxstarter changes this logic just a bit depending on whether or not one or multiple packages are provided to Install-BoxstarterPackage or the Boxstarter URL. If just one package is provided, Boxstarter will always attempt to re-download and install the package regardless of whether it had been previously installed. Its important to note this only applies to the "outer" package. If your package includes calls to `choco install`, those packages will abide by the normal Chocolatey install rules and will not be installed if they already exist in the Chocolatey lib folder. Furthermore, when you supply multiple packages to Boxstarter's command line or URL, it will skip installation for packages already installed.
 
