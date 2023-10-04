@@ -5,7 +5,7 @@ Title: Installing Packages
 
 # Installing Packages
 
-Boxstarter can install packages either from a local Boxstarter Repository, a network share or external media, or it can "push" an installation to a remote machine.
+Boxstarter can instal packages either from a local Boxstarter Repository, a network share or external media, or it can "push" an installation to a remote machine.
 
 ## Install-BoxstarterPackage
 
